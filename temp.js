@@ -1,12 +1,3 @@
-const express = require("express");
-const axios = require("axios");
-const cheerio = require("cheerio");
-const Sentiment = require("sentiment");
-const sentiment = new Sentiment();
-
-const app = express();
-const port = 3000;
-
 app.get("/", async (req, res, next) => {
   const body = await axios.get(
     "https://www.amazon.ca/Apple-Watch-GPS-Cellular-45mm/dp/B09HFJWY6X/ref=lp_33897839011_1_1",
@@ -38,7 +29,3 @@ const SentimentData = async (text) => {
   const result = await sentiment.analyze(text);
   return result;
 };
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
