@@ -1,18 +1,8 @@
 const express = require("express");
-
 const router = express.Router();
+const indexController = require("../controller/indexController.js");
 
-module.exports = (params) => {
-  router.get("/", async (req, res, next) => {
-    try {
-      return res.render("layout/index", {
-        pageTitle: "Welcome",
-        template: "index",
-      });
-    } catch (err) {
-      return next(err);
-    }
-  });
+router.get("/", indexController.get);
+router.post("/", indexController.post);
 
-  return router;
-};
+module.exports = router;

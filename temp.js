@@ -21,11 +21,10 @@ app.get("/", async (req, res, next) => {
 
   console.log(postTitles.length);
 
-  const sents = await SentimentData(postTitles.join(" "));
-  res.json(sents);
+  
 });
 
 const SentimentData = async (text) => {
-  const result = await sentiment.analyze(text);
-  return result;
+    const result = await sentiment.analyze(text);
+    return result;
 };

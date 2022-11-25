@@ -1,1 +1,23 @@
+<div class="container mt-4">
+    <form method="post" action="/">
+        <div class="form-group">
+            <label for="productLink">Product URL</label>
+            <input type="text" class="form-control" id="productLink" name="productLink"
+                aria-describedby="productLinkHelp" placeholder="Type or Paste Url...">
+            <small id="productLinkHelp" class="form-text text-muted">Copy any product url from amazon e.g.
+                https://www.amazon.ca/Echo-Dot-3rd-gen-Charcoal/dp/B07PDHT5XP</small>
 
+            <button type="submit" class="btn btn-primary mt-4">Get Data</button>
+        </div>
+    </form>
+</div>
+<div class="container mt-4">
+    <div class="row product-details">
+        Product data
+    </div>
+    <div class="row product-review-analysis">
+        <% if(data) { %>
+        <%= JSON.stringify(data) %>
+        <% } %>
+    </div>
+</div>

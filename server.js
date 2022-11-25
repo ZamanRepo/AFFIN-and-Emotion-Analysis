@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, "./static")));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use("/", router());
+app.use("/", router);
 
 app.use((req, res, next) => next(createErrors(404, "File not found")));
 
