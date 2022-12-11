@@ -22,9 +22,24 @@ class ScrapService {
     const $ = cheerio.load(this.body.data);
 
     return {
+      productLink: this.productLink,
+      productImg: $("#landingImage").attr("src"),
       productTitle: $("#productTitle").text().trim(),
-      productPrice: $("#priceblock_ourprice").text().trim(),
-      productRating: $(".a-icon.a-icon-star.a-star-4-5").text().trim(),
+      productPrice: $(
+        "#corePriceDisplay_desktop_feature_div .priceToPay .a-offscreen"
+      )
+        .text()
+        .trim(),
+      productRating: $(
+        "#averageCustomerReviews_feature_div #averageCustomerReviews #acrPopover .a-icon.a-icon-star .a-icon-alt"
+      )
+        .text()
+        .trim(),
+      productDescription: $(
+        "#feature-bullets .a-unordered-list.a-vertical.a-spacing-mini .a-list-item"
+      )
+        .text()
+        .trim(),
     };
   }
 

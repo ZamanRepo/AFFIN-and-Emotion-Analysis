@@ -51,8 +51,8 @@ $(document).ready(() => {
     var fontFamily = "sans-serif";
     var fontScale = 15;
     var padding = 0;
-    var height = 500;
-    var width = 700;
+    var height = 300;
+    var width = $("#word-cloud-div").width();
     const rotate = () => 0; // () => (~~(Math.random() * 6) - 3) * 30
 
     var data = words

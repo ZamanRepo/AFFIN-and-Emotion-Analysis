@@ -32,7 +32,10 @@ exports.post = async (req, res, next) => {
       pageTitle: "Welcome",
       template: "index",
       productUrl: req.body.productLink,
-      data: encodeURI(JSON.stringify({ productDetail, productReviews })),
+      data:
+        sentiments.length > 0
+          ? encodeURI(JSON.stringify({ productDetail, productReviews }))
+          : false,
     });
   } catch (err) {
     return next(err);
