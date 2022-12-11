@@ -15,9 +15,11 @@
     <div class="row product-details">
         Product data
     </div>
+
     <div class="row product-review-analysis">
         <% if(data) { %>
-        <%= JSON.stringify(data) %>
+        <div style="display: none;" id="serverdata" data-test=<%= data %>></div>
+        <div class="col-12" id="word-cloud-div"></div>
         <% } %>
     </div>
 </div>

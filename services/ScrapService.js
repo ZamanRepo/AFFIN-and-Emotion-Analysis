@@ -20,8 +20,11 @@ class ScrapService {
 
   async getProductDetails() {
     const $ = cheerio.load(this.body.data);
+
     return {
-      productName: "XYZ",
+      productTitle: $("#productTitle").text().trim(),
+      productPrice: $("#priceblock_ourprice").text().trim(),
+      productRating: $(".a-icon.a-icon-star.a-star-4-5").text().trim(),
     };
   }
 

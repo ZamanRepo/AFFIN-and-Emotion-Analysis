@@ -18,18 +18,21 @@ exports.post = async (req, res, next) => {
     console.log(req.body);
     const scrapService = new ScrapService(req.body.productLink);
     await scrapService.loadProductDetails();
+
+    const productDetail = await scrapService.getProductDetails();
     const sentiments = await scrapService.getReviews();
 
     const sentimentService = new SentimentService();
 
-    const data = await sentimentService.getSentiments(sentiments.join(" "));
+    const productReviews = await sentimentService.getSentiments(
+      sentiments.join(" ")
+    );
 
-    console.log(sentiments);
     return res.render("layout/index", {
       pageTitle: "Welcome",
       template: "index",
       productUrl: req.body.productLink,
-      data,
+      data: encodeURI(JSON.stringify({ productDetail, productReviews })),
     });
   } catch (err) {
     return next(err);
