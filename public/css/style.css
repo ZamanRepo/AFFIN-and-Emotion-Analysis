@@ -225,7 +225,7 @@ footer .social {
   color: #f6b60b;
 }
 
-footer .social a {
+footer .social span {
   text-decoration: none;
   font-size: 24px;
   color: inherit;
