@@ -10,7 +10,7 @@ We are **three** member in the group.
 
 **3) Shivam Parekh**
 
-We would like to thank a wonderful professor, **ANK Zaman, PhD**, for the excellent teachings he delivered to us. We express our gratitude for your generosity and the wonderful support of overseas students like ourselves.
+We would like to thank a wonderful professor, **ANK Zaman, PhD**, for the excellent teaching he delivered to us. We express our gratitude for your generosity and the tremendous support of overseas students like ourselves.
 
 # Screenshots
 
